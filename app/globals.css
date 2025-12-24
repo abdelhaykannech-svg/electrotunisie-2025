@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Palette personnalisée */
+  --primary: #4C6173;
+  --secondary: #8BBBD9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Ajout des couleurs personnalisées pour Tailwind */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  /* Mapping des polices pour les utiliser avec font-title, font-menu, etc. */
+  --font-title: var(--font-roboto);
+  --font-menu: var(--font-montserrat);
+  --font-sans: var(--font-custom-body); /* Votre police libre choisie */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Application globale des polices */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Police libre par défaut (ex: Open Sans) */
+  font-family: var(--font-custom-body), ui-sans-serif, system-ui;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto);
+  color: var(--primary);
+}
+
+nav, .menu {
+  font-family: var(--font-montserrat);
+}
